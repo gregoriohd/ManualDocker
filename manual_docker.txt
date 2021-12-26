@@ -1,0 +1,56 @@
+Paramentros criação conteiner
+ -d -> executar container em backgroud
+ -i -> modo interativo 
+ -t -> Simula terminal do container(pseudo TTY) sem interação
+ -c -> Balancear uso de cpu
+ -m -> limitar uso de memoria ram
+ -P -> mapemaneto de portas aleatorias
+ -p -> mapeamento de porta
+ -v -> mapeamento de volume
+--rm -> remove o conteiner em execução
+--name -> nomeia o conteiner
+-e -> Configura a variavel de ambiente
+-w -> Especifica em que diretorio deve ser executado o paramentro da imagem_conteiner
+
+$ docker container run -it --rm --name LinuxOne alpine 
+
+Paramentros listar conteiner
+-a -> lista todos os conteiner(iniciados ou nao iniciados)
+-l -> lista o ultimo container iniciado
+-n
+-q -> lista soemtes IDs dos container iniciados
+-s 
+
+Paramentro iniciar conteiner
+-a -> anexa o terminal ao conteiner
+-i -> modo interativo
+
+Paramentro para conteiner
+-t 1 -> para o conteiner em segundos com o valor informado. o padrão e de 10 segundos
+
+Executar e baixar Imagem-docker
+* docker container run nome-da-imagem
+
+Listar conteineres em execuçao ou parado
+* docker container list (alias -> ps, ls)
+
+Iniciar conteiner
+* docker container start id_conteiner
+
+Parar container
+* docker container stop id_container
+
+Limpar conteiner inativos (parado)
+* docker container prune
+
+Remover imagem
+* docker rmi nome_da_imagem
+
+Verificando em que porta acessar o conteiner
+* docker port ID_conteiner
+
+Especificando volume 
+* docker container run -v "Diretorio_Meu_Host:Diretorio_Conteiner" imagem_conteiner
+
+Exemplo de especificação de volume, porta e diretorio
+* docker container run -p 8080:3000 -v "/home/gregoriohd/Documentos/Volume_Docker/volume-exemplo/:/var/www/" -w "/var/www/" node npm start
